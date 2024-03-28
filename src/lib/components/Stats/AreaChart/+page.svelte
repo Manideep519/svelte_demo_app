@@ -108,7 +108,7 @@
         <DropdownItem>Last 90 days</DropdownItem>
       </Dropdown>
       <A
-        href="/"
+        href="/demo-dashboard"
         class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline"
       >
         Users Report

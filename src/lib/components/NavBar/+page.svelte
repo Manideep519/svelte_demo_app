@@ -14,3 +14,4 @@
     <Button href="/register">Register</Button>
   </NavUl>
 </Navbar>
+<hr />

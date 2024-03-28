@@ -5,7 +5,7 @@
   import FlexCenter from "$lib/helper/FlexCenter/+page.svelte";
 </script>
 
-<FlexCenter>
+<FlexCenter css="items-stretch gap-3">
   <LineChart />
   <AreaChart />
   <DonutChart />
