@@ -57,7 +57,7 @@
     </TableHead>
 
     <TableBody>
-      {#if pokemonData.length !== 0}
+      {#if pokemonData.length === 0}
         <div class="flex w-full justify-center items-center h-24">
           <Spinner />
           <p>Loading Pokemons</p>
