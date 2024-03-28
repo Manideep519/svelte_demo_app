@@ -1,7 +1,8 @@
 <script lang="ts">
   import Login from "$lib/components/Login/+page.svelte";
+  import Container from "$lib/components/Container/+page.svelte";
 </script>
 
-<div class="container">
+<Container>
   <Login />
-</div>
+</Container>

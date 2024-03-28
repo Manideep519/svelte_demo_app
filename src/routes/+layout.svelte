@@ -5,7 +5,5 @@
 </script>
 
 <NavBar />
-<div class="min-h-[calc(100vh-130px)] flex items-center justify-center">
-  <slot />
-</div>
+<slot />
 <Footer />
