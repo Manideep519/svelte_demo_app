@@ -7,6 +7,7 @@
     TableBodyRow,
     TableHead,
     TableHeadCell,
+    Spinner,
   } from "flowbite-svelte";
 
   let tableCellClass = "px-8 py-2 text-center mx-auto";
@@ -54,33 +55,41 @@
       >
       <TableHeadCell class={`${tableCellClass} text-lg capitalize`}>Cry</TableHeadCell>
     </TableHead>
+
     <TableBody>
-      {#each pokemonData as pokemon}
-        <TableBodyRow>
-          <TableBodyCell tdClass={tableCellClass}
-            ><img
-              class="h-24 max-w-20"
-              src={pokemon.image}
-              alt={`Image of ${pokemon.name}`}
-            /></TableBodyCell
-          >
-          <TableBodyCell
-            tdClass={`${tableCellClass} text-lg font-semibold dark:text-white capitalize`}
-          >
-            {pokemon.name}
-          </TableBodyCell>
-          <TableBodyCell
-            tdClass={`${tableCellClass} text-2xl font-semibold dark:text-white capitalize`}
-            >{Math.round(pokemon.weight * 0.1)}</TableBodyCell
-          >
-          <TableBodyCell tdClass={tableCellClass}>
-            <audio controls>
-              <source src={pokemon?.cry} type="audio/ogg" />
-              Your browser does not support the audio element.
-            </audio>
-          </TableBodyCell>
-        </TableBodyRow>
-      {/each}
+      {#if pokemonData.length !== 0}
+        <div class="flex w-full justify-center items-center h-24">
+          <Spinner />
+          <p>Loading Pokemons</p>
+        </div>
+      {:else}
+        {#each pokemonData as pokemon}
+          <TableBodyRow>
+            <TableBodyCell tdClass={tableCellClass}
+              ><img
+                class="h-24 max-w-20"
+                src={pokemon.image}
+                alt={`Image of ${pokemon.name}`}
+              /></TableBodyCell
+            >
+            <TableBodyCell
+              tdClass={`${tableCellClass} text-lg font-semibold dark:text-white capitalize`}
+            >
+              {pokemon.name}
+            </TableBodyCell>
+            <TableBodyCell
+              tdClass={`${tableCellClass} text-2xl font-semibold dark:text-white capitalize`}
+              >{Math.round(pokemon.weight * 0.1)}</TableBodyCell
+            >
+            <TableBodyCell tdClass={tableCellClass}>
+              <audio controls>
+                <source src={pokemon?.cry} type="audio/ogg" />
+                Your browser does not support the audio element.
+              </audio>
+            </TableBodyCell>
+          </TableBodyRow>
+        {/each}
+      {/if}
     </TableBody>
   </Table>
 </Card>
