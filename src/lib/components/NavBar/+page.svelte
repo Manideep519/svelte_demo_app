@@ -9,7 +9,8 @@
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"> Super </span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavUl>
+    <Button href="/demo-dashboard" color="alternative">demo-dashboard</Button>
     <Button href="/login" color="alternative">Login</Button>
     <Button href="/register">Register</Button>
   </NavUl>

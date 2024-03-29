@@ -12,12 +12,18 @@
     DropdownItem,
   } from "flowbite-svelte";
   let spanClass = "flex-1 ml-3 whitespace-nowrap";
+
+  export let view;
+
+  const handleDashboardMenuClick = (menuItem: string) => {
+    view = menuItem;
+  };
 </script>
 
 <Sidebar class="min-w-64">
   <SidebarWrapper class="bg-white">
     <SidebarGroup>
-      <SidebarItem label="Overview">
+      <SidebarItem on:click={() => handleDashboardMenuClick("Stats")} label="Overview">
         <svelte:fragment slot="icon">
           <svg
             aria-hidden="true"
@@ -31,7 +37,7 @@
           >
         </svelte:fragment>
       </SidebarItem>
-      <SidebarDropdownWrapper label="Pages">
+      <SidebarDropdownWrapper label="Apis">
         <svelte:fragment slot="icon">
           <svg
             aria-hidden="true"
@@ -46,9 +52,21 @@
             /></svg
           >
         </svelte:fragment>
-        <SidebarDropdownItem label="Settings" href="/demo-dashboard" />
-        <SidebarDropdownItem label="Kanban" href="/demo-dashboard" />
-        <SidebarDropdownItem label="Calendar" href="/demo-dashboard" />
+        <SidebarDropdownItem
+          on:click={() => handleDashboardMenuClick("Pokemon")}
+          label="Pokemon"
+          href="/demo-dashboard"
+        />
+        <SidebarDropdownItem
+          on:click={() => handleDashboardMenuClick("Map")}
+          label="Map"
+          href="/demo-dashboard"
+        />
+        <SidebarDropdownItem
+          on:click={() => handleDashboardMenuClick("Todo")}
+          label="Todo"
+          href="/demo-dashboard"
+        />
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper label="Sales">
         <svelte:fragment slot="icon">
